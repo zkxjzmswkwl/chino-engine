@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package anna;
+
+message PlayerInfo
+{
+	optional string number = 1;
+	optional int32 type = 2;
+}

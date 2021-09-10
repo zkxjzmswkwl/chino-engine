@@ -1,7 +1,6 @@
-#include <windows.h>
-
-#define MAX_NAME 256
-#define HInstance() GetModuleHandle(NULL);
+///Created by: zkxjzmswkwl
+///Created on: Sept. 9, 2021.
+#include "pch.h"
 
 WCHAR		wdWindow[MAX_NAME];
 WCHAR		wdWindowTitle[MAX_NAME];
@@ -9,13 +8,25 @@ WCHAR		wdWindowTitle[MAX_NAME];
 INT			nWindowHeight;
 INT			nWindowWidth;
 
+LRESULT
+CALLBACK WindowProcess(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
+{
+	switch (message)
+	{
+	case WM_DESTROY:
+		PostQuitMessage(0);
+		break;
+	}
+	return DefWindowProc(hWnd, message, wParam, lParam);
+}
+
 ///////////////////////////////////////////////////////////////
 /// WinMain
 /// Perhaps more documentation here in the future~
-int CALLBACK WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
+int
+CALLBACK WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 {
 
-	///////////////////////////////////////////////////////////////
 	/// Init Globals
 	wcscpy_s(wdWindow, TEXT("Anna"));
 #ifdef _DEBUG
@@ -27,7 +38,6 @@ int CALLBACK WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 	nWindowWidth = 1920;
 	nWindowHeight = 1080;
 
-	///////////////////////////////////////////////////////////////
 	/// Window
 	WNDCLASSEX wcWindow;
 
@@ -44,17 +54,17 @@ int CALLBACK WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 
 	wcWindow.lpszClassName = wdWindow;
 
-	// We don't want a menu
+	/// We don't want a menu
 	wcWindow.lpszMenuName = nullptr;
 
 	wcWindow.hInstance = HInstance();
 
 	// TODO: Handle changing of size, taking in signals, etc.
-	wcWindow.lpfnWndProc = DefWindowProc;
+	wcWindow.lpfnWndProc = WindowProcess;
 
 	RegisterClassEx(&wcWindow);
 
-	// Display window
+	/// Display window
 	HWND hWnd = CreateWindow(
 		wdWindow,
 		wdWindowTitle,
