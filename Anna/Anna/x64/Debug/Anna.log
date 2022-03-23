@@ -1,9 +1,1 @@
-﻿  pch.cpp
-  PlayerInfo.pb.cc
-C:\Users\DadeMurphy\Documents\GitHub\Anna\Anna\Anna\PlayerInfo.pb.cc(177,66): warning C4244: '=': conversion from 'uint64_t' to 'google::protobuf::int32', possible loss of data
-C:\Users\DadeMurphy\Documents\GitHub\Anna\Dependencies\include\google\protobuf\has_bits.h(73,41): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\DadeMurphy\Documents\GitHub\Anna\Dependencies\include\google\protobuf\has_bits.h(72): message : while compiling class template member function 'void google::protobuf::internal::HasBits<1>::Or(const google::protobuf::internal::HasBits<1> &)'
-C:\Users\DadeMurphy\Documents\GitHub\Anna\Anna\Anna\PlayerInfo.pb.cc(198): message : see reference to function template instantiation 'void google::protobuf::internal::HasBits<1>::Or(const google::protobuf::internal::HasBits<1> &)' being compiled
-C:\Users\DadeMurphy\Documents\GitHub\Anna\Dependencies\include\google\protobuf\has_bits.h(83): message : see reference to class template instantiation 'google::protobuf::internal::HasBits<1>' being compiled
-C:\Users\DadeMurphy\Documents\GitHub\Anna\Anna\Anna\PlayerInfo.pb.cc(336,1): error C2857: '#include' statement specified with the /Ycpch.h command-line option was not found in the source file
-  WinMain.cpp
+﻿  Anna.vcxproj -> C:\Users\Carter\personal\Anna\Anna\x64\Debug\Anna.exe
