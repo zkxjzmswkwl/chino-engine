@@ -12,8 +12,8 @@
 WCHAR		wdWindow[MAX_NAME];
 WCHAR		wdWindowTitle[MAX_NAME];
 
-INT			nWindowHeight;
-INT			nWindowWidth;
+INT		nWindowHeight;
+INT		nWindowWidth;
 
 WNDCLASSEX	wcWindow;
 
